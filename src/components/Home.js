@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 
 const Home = ( props ) => {
   return (
     <>
       <div className='datePicker'>
-        <h1>Select a date to retrieve NASA's picture of that day!</h1>
+        <h1>Select a date to retrieve NASA's Astronomy Picture of that Day!</h1>
         <input type='date' onChange={e => props.handleChange(e.target.value)} ></input>
       </div>
       <div className='home'>

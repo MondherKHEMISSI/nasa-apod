@@ -3,18 +3,17 @@ import NavBar from './NavBar';
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
-const NasaPhoto = () => {
+const NasaPhoto = ( props ) => {
     const [photoData, setPhotoData] = useState(null);
+    console.log(props.date)
     
     useEffect(() => {
         fetchPhoto();
 
         async function fetchPhoto() {
-            const res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
+            const res = await fetch(`https://api.nasa.gov/planetary/apod?date=${props.date}&api_key=${apiKey}`);
             const data = await res.json();
             setPhotoData(data);
-            console.log(apiKey);
-            console.log(data);
         };
     }, []);
 
